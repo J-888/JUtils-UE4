@@ -3,7 +3,11 @@
 #pragma once
 
 #include "Kismet/BlueprintFunctionLibrary.h"
+
+#include "Types/EPlatform.h"
+
 #include "JUtilsBPLibrary.generated.h"
+
 
 /* 
 *	Function library class.
@@ -27,6 +31,6 @@ class UJUtilsBPLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_UCLASS_BODY()
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "JUtils sample test testing"), Category = "JUtilsTesting")
-	static float JUtilsSampleFunction(float Param);
+	UFUNCTION(BlueprintPure, meta = (DisplayName = "Get Platform", Keywords = "JUtils Platform"), Category = "JUtils")
+	static EPlatform GetPlatform();
 };
